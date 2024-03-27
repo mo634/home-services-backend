@@ -17,7 +17,7 @@ module.exports = {
           firstName: user.firstName ?? "anonymous",
           secondName: user.secondName ?? "anonymous",
           email: user.email,
-          profile: "http://localhost:3000/uploads/60111.jpg",
+          profile: "https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg",
           password: CryptoJS.AES.encrypt(
             user.password,
             process.env.SECRET
@@ -31,7 +31,7 @@ module.exports = {
         await newUser.save();
         return res
           .status(201)
-          .json({ status: "success", message: "Email created Successfully " });
+          .json({ status: "success", message: "Email created Successfully ",newUser });
       }
     } catch (err) {
       return res.status(500).send({ status: "failed", error: err.message });
