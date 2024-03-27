@@ -41,7 +41,7 @@ mongoose.connect(url).then(() => {
   console.log("mongodb server connected");
 });
 
-app.get("/", (req, res) => res.send("Hello World!"));
+app.get("/", (req, res) => res.send("hi World!"));
 
 app.use("/api/", authRoute);
 app.use("/api/users", userRoute);
