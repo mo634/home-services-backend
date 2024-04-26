@@ -41,7 +41,7 @@ mongoose.connect(url).then(() => {
   console.log("mongodb server connected");
 });
 
-app.get("/", (req, res) => res.send("hi World!"));
+app.get("/", (req, res) => res.send("hiiii!"));
 
 app.use("/api/", authRoute);
 app.use("/api/users", userRoute);
@@ -49,4 +49,4 @@ app.use("/api/category", categoryRoute);
 app.use("/api/worker", workerRoute);
 app.use("/api/order", orderRoute);
 
-app.listen(port, () => console.log(`Runing app listening on port ${port}!`));
+app.listen(port, () => console.log(`Running app listening on port ${port}!`));
