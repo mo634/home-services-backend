@@ -17,7 +17,7 @@ module.exports = {
           firstName: user.firstName ?? "anonymous",
           secondName: user.secondName ?? "anonymous",
           email: user.email,
-          profile: "http://localhost:3000/uploads/60111.jpg",
+          profile: `http://localhost:3000/uploads/${req.file.filename}`,
           password: CryptoJS.AES.encrypt(
             user.password,
             process.env.SECRET
@@ -27,7 +27,7 @@ module.exports = {
           phone: user.phone ?? " ",
           address: user.address ?? " ",
         });
-        
+
         await newUser.save();
         return res
           .status(201)
